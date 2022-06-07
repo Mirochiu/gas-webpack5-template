@@ -1,0 +1,14 @@
+{
+  "extends": [
+    "airbnb-base"
+  ],
+  "plugins": [
+    "googleappsscript"
+  ],
+  "env": {
+    "googleappsscript/googleappsscript": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 2022
+  }
+}
