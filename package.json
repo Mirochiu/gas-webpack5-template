@@ -1,6 +1,6 @@
 {
   "name": "gas-webpack5-template",
-  "version": "0.5.0",
+  "version": "0.6.5",
   "author": "Chiu, Yung-Hsiang <mirror.tw@gmail.com>",
   "license": "MIT",
   "private": false,
@@ -11,26 +11,28 @@
     "javascript"
   ],
   "devDependencies": {
-    "@babel/core": "^7.18.2",
-    "@babel/preset-env": "^7.18.2",
-    "@types/google-apps-script": "^1.0.47",
-    "babel-loader": "^8.2.5",
+    "@babel/core": "^7.22.1",
+    "@babel/preset-env": "^7.22.4",
+    "@types/google-apps-script": "^1.0.64",
+    "babel-loader": "^8.3.0",
+    "clasp": "^1.0.0",
     "copy-webpack-plugin": "^11.0.0",
-    "eslint": "^8.17.0",
+    "eslint": "^8.42.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-googleappsscript": "^1.0.4",
-    "eslint-plugin-import": "^2.26.0",
-    "gas-webpack-plugin": "^2.2.1",
+    "eslint-plugin-import": "^2.27.5",
+    "gas-webpack-plugin": "^2.5.0",
     "rimraf": "^3.0.2",
     "webpack": "^5.85.1",
     "webpack-cli": "^4.10.0"
   },
   "scripts": {
-    "create": "rimraf .clasp.json && mkdir -p dist && clasp create --type sheets --rootDir ./dist && cp ./dist/.clasp.json ./",
+    "login": "npx clasp login",
+    "create": "rimraf .clasp.json && mkdir -p dist && npx clasp create --type sheets --rootDir ./dist && cp ./dist/.clasp.json ./",
     "build:dev": "webpack --mode development",
     "build": "webpack --mode production",
-    "first-deploy": "npm build && clasp push && clasp deploy --description first",
-    "deploy": "npm run build && clasp push && clasp deploy --description \"pubished@$(date)\" --deploymentId $(jq -r .deploymentId .clasp.json)",
-    "open": "clasp open --webapp --deploymentId $(jq -r .deploymentId .clasp.json)"
+    "first-deploy": "npm run build && npx clasp push && npx clasp deploy --description first",
+    "deploy": "npm run build && npx clasp push && npx clasp deploy --description \"pubished@$(date)\" --deploymentId $(jq -r .deploymentId .clasp.json)",
+    "open": "npx clasp open --webapp --deploymentId $(jq -r .deploymentId .clasp.json)"
   }
 }
