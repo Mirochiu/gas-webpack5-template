@@ -27,12 +27,13 @@
     "webpack-cli": "^4.10.0"
   },
   "scripts": {
-    "login": "npx clasp login",
-    "create": "rimraf .clasp.json && mkdir -p dist && npx clasp create --type sheets --rootDir ./dist && cp ./dist/.clasp.json ./",
+    "install": "pnpm install",
+    "login": "pnpm exec clasp login",
+    "create": "rimraf .clasp.json && mkdir -p dist && pnpm exec clasp create --type sheets --rootDir ./dist && cp ./dist/.clasp.json ./",
     "build:dev": "webpack --mode development",
     "build": "webpack --mode production",
-    "first-deploy": "npm run build && npx clasp push && npx clasp deploy --description first",
-    "deploy": "npm run build && npx clasp push && npx clasp deploy --description \"pubished@$(date)\" --deploymentId $(jq -r .deploymentId .clasp.json)",
-    "open": "npx clasp open --webapp --deploymentId $(jq -r .deploymentId .clasp.json)"
+    "first-deploy": "pnpm build && pnpm exec clasp push && pnpm exec clasp deploy --description first",
+    "deploy": "pnpm build && pnpm exec clasp push && pnpm exec clasp deploy --description \"pubished@$(date)\" --deploymentId $(jq -r .deploymentId .clasp.json)",
+    "open": "pnpm exec clasp open --webapp --deploymentId $(jq -r .deploymentId .clasp.json)"
   }
 }
