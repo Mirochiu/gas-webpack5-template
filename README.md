@@ -50,7 +50,7 @@ install `pnpm` with ``npm install -g pnpm`.
 
 if you see `需要授權才能執行此動作。`, please autherize the permissions by `pnpm exec clasp open`
 
-## Appedenx: pnpm commands
+## Appendix: pnpm commands
 
 - `npm install` → `pnpm install`
 - `npm i <pkg>` → `pnpm add <pkg>`
