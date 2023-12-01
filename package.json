@@ -27,7 +27,6 @@
     "webpack-cli": "^4.10.0"
   },
   "scripts": {
-    "install": "pnpm install",
     "login": "pnpm exec clasp login",
     "create": "rimraf .clasp.json && mkdir -p dist && pnpm exec clasp create --type sheets --rootDir ./dist && cp ./dist/.clasp.json ./",
     "build:dev": "webpack --mode development",
