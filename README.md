@@ -10,9 +10,9 @@ install `pnpm` with ``npm install -g pnpm`.
 
 1. run `pnpm install` to install the project depenencies.
 
-2. login your google account by `pnpm login`.
+2. login your google account by `pnpm run login`.
 
-3. create a project `pnpm create`
+3. create a project `pnpm run create`
 
 4. make the first deployment by `pnpm first-deploy`.
 
@@ -22,12 +22,12 @@ install `pnpm` with ``npm install -g pnpm`.
 
    Copy deployment Id and add to `.clasp.json` with the attribute name `deploymentId`.
 
-   After that, use `pnpm open` to open your webapp on AppScript.
+   After that, use `pnpm run open` to open your webapp on AppScript.
    You will see a web page with title `You're a valid user`.
 
 ## re-deploy
 
-1. `pnpm deploy`
+1. `pnpm run deploy`
 
    The output looks like below.
 
@@ -38,7 +38,7 @@ install `pnpm` with ``npm install -g pnpm`.
    - AKf... @3.
    ```
 
-2. `pnpm open`
+2. `pnpm run open`
 
    To open your webapp on AppScript.
 
@@ -54,5 +54,5 @@ if you see `需要授權才能執行此動作。`, please autherize the permissi
 
 - `npm install` → `pnpm install`
 - `npm i <pkg>` → `pnpm add <pkg>`
-- `npm run <cmd>` → `pnpm <cmd>`
+- `npm run <cmd>` → `pnpm run <cmd>`
 - `npx clasp` → `pnpm exec clasp`
